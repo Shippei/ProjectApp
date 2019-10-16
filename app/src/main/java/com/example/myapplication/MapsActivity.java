@@ -33,6 +33,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Marker marker;
     LocationListener locationListener;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -128,9 +129,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //        mMap.addCircle(new CircleOptions().center(sydney).radius(600).strokeWidth(3f).strokeColor(Color.RED).fillColor(Color.argb(70,150,50,50)));
     }
 
-    @Override
-   protected void onStop() {
-        super.onStop();
-        locationManager.removeUpdates(locationListener);
-   }
+//    @Override
+//   protected void onStop() {
+//        super.onStop();
+//        locationManager.removeUpdates(locationListener);
+//   }
 }

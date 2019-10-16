@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,15 +22,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //peak
         btnLogout = findViewById(R.id.logout);
-        //amp
-        Button btn = (Button) findViewById(R.id.bt1);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openMapsAtivity();
-            }
-        });
-        //peak
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,9 +30,29 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intToMain);
             }
         });
+        Button add = (Button) findViewById(R.id.button3);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAddActivity();
+            }
+        });
+        ImageButton excase = (ImageButton) findViewById(R.id.imageButton2);
+        excase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openExcaseActivity();
+            }
+        });
     }
-    public void openMapsAtivity(){
-        Intent intent = new Intent(this, MapsActivity.class);
+
+    private void openExcaseActivity() {
+        Intent intent = new Intent(this, ExcaseActivity.class);
+        startActivity(intent);
+    }
+
+    private void openAddActivity() {
+        Intent intent = new Intent(this, AddcaseActivity.class);
         startActivity(intent);
     }
 }
